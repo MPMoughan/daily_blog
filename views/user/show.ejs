@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<!-- SHOW for USER -->
+
+  <h2>A little info about <%= user.username %></h2>
+  <p>
+    <br>
+    Name: <%= user.username%>
+    <br>
+    Bio: <%= user.bio%>
+  </p>
+
+
+  <h3> Posts by <%= user.username%> </h3>
+
+    <% posts.forEach(function(post){ %>
+    <p>
+      <ul>
+        <li><a href="/posts/<%= post.UserId%>"> <%= post.title %></a></li>
+      </ul>
+    </p>
+  <% }) %>
+
+<br>
+
+<a href="/users">Back to User's List</a>
+
+<% include ../partials/footer %>

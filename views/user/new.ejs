@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<!-- NEW for USER -->
+
+<div class="row">
+  <div class="col-md-7 col-md-offset-1">
+
+<% if (typeof errMsg !== 'undefined') {%>
+  <h3 style="color:red"> <%= errMsg %> </h3>
+<% }; %>
+
+<h3>New Users' Register Here!</h3>
+<br>
+
+<!-- FORM returns to user index page-->
+  <span>
+    <form action="/users" method="POST">
+      <input name="user[username]" placeholder="Enter Name" value="<%= username %>">
+
+      <input name="user[password]" type="password" placeholder="Enter Password" value="<%= password %>">
+
+      <input name="user[bio]" placeholder="Enter Bio" value="<%= bio %>" type="textarea">
+
+      <input type="submit" class="btn btn-primary" value="Save">
+    </form>
+  </span>
+
+  </div>
+  <div class="col-md-3 col-md-offset-1"></div>
+</div>
+
+
+<% include ../partials/footer %>

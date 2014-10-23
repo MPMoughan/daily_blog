@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DP Blog-verse</title>
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
+
+  <style>
+  .landing {
+    background: url(http://img1.wikia.nocookie.net/__cb20110228203335/smallville/images/b/b8/Planet-wall.jpg)
+    };
+  </style>
+
+</head>
+<body class="landing">
+
+<div class="container" text-center>
+
+<% if (typeof message !== 'undefined') { %>
+    <div class = "alert alert-success">
+      <%= message %>
+    </div>
+  <% } %>
+
+  <div class="jumbotron">
+    <h1>Welcome to Daily Planet Blog-verse</h1>
+    <br>
+    <h3>Please login to view or post articles!</h3>
+    <a href="/login" class = "btn btn-success btn-lg">Log in</a>
+    <h3>or</h3>
+    <h3> If you are new to Daily Planet Blog-verse, please sign-up so you can being to read and post great content!</h3>
+    <a href="/signup" class = "btn btn-primary btn-lg">Sign up</a>
+  </div>
+
+  <blockquote>
+  <p>Daily Planet is the easiest and fastest way to create and share content on latest economc and social trends</p>
+  <small>Matthew Patrick, <cite title="Source Title">Newsweek</cite></small>
+</blockquote>
+
+</div>
+</body>
+</html>

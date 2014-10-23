@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+<!-- POST INDEX -->
+
+<div class="row">
+  <div class="col-md-7 col-md-offset-1">
+
+    <h1>Daily Planet Blog-verse Article List</h1>
+
+    <h3>Want to add an article? you must log in as an author</h3>
+    <a href="/users">Authors Here</a>
+    <br>
+
+    <% posts.forEach(function(post){ %>
+
+    <p>
+      <a href="/posts/<%= post.UserId%>"> <%= post.title %></a>
+      <br>
+      by <a href="/users/<%=post.User.id%>"> <%=post.User.username%> </a>
+    <p>
+
+      <form action="/posts/<%= post.id %>?_method=delete" method="post">
+        <input type="submit" value="Delete">
+      </form>
+      <a href="/posts/<%= post.id %>/edit">Edit</a>
+    <% }); %>
+  </div>
+
+  <div class="col-md-3 col-md-offset-1"></div>
+
+
+<% include ../partials/footer %>

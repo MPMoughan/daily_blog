@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+<!-- INDEX PAGE FOR USER -->
+
+<div class="row">
+  <div class="col-md-7 col-md-offset-1">
+
+    <h1>Daily Planet Blog-verse Users</h1>
+
+    <% allUsers.forEach(function(user){ %>
+
+  <div class="index" display="inline"></div>
+    <p>
+      <a href="/users/<%= user.id %>"> <%= user.username %> </a>
+      <!-- Link to user info  -->
+    </p>
+
+    <p>
+      <a href="/posts/<%= user.id %>/New">Add a new post</a>
+      <!-- Link to add new post -->
+
+
+      <form action="/users/<%= user.id %>?_method=delete" method="post">
+        <input type="submit" value="Delete">
+      </form>
+       <a href="/users/<%= user.id %>/edit">Edit</a>
+    </p>
+
+    <% }); %>
+    </div>
+  </div>
+
+  <div class="col-md-3 col-md-offset-1"></div>
+
+</div>
+<% include ../partials/footer %>
